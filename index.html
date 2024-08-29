@@ -15,7 +15,7 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#181818" />
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f3f3" />
 
-  <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. Learn more at https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <!-- These meta tags are Apple-specific, and set the web application to run in full-screen mode with a black status bar. -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="PWA Starter" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -37,15 +37,32 @@
 </head>
 
 <body>
+  <!-- This is the element targeted by VANTA.TOPOLOGY -->
+  <div id="your-element-selector" style="width: 100vw; height: 100vh;"></div>
+
   <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
   <app-index></app-index>
 
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register(
-        '/sw.js'
-      );
+      navigator.serviceWorker.register('/sw.js');
     }
+  </script>
+  <script src="p5.min.js"></script>
+  <script src="vanta.topology.min.js"></script>
+  <script>
+    VANTA.TOPOLOGY({
+      el: "#your-element-selector",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x56a29d,
+      backgroundColor: 0x2d2f36
+    });
   </script>
 </body>
 
