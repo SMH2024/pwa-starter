@@ -5,12 +5,12 @@ type ThemeKey = 'light' | 'light-mc' | 'light-hc' | 'dark' | 'dark-mc' | 'dark-h
 
 // Define paths for each theme CSS file
 const themePaths: Record<ThemeKey, string> = {
-  light: '/path/to/light.css',
-  'light-mc': '/path/to/light-mc.css',
-  'light-hc': '/path/to/light-hc.css',
-  dark: '/path/to/dark.css',
-  'dark-mc': '/path/to/dark-mc.css',
-  'dark-hc': '/path/to/dark-hc.css',
+  light: 'css/light.css',
+  'light-mc': 'css/light-mc.css',
+  'light-hc': 'css/light-hc.css',
+  dark: 'css/dark.css',
+  'dark-mc': 'css/dark.mc-css',
+  'dark-hc': 'css/dark.hc-css',
 };
 
 // Function to apply the selected theme by setting the href of the link element
