@@ -37,33 +37,6 @@
 </head>
 
 <body>
-  <!-- This is the element targeted by VANTA.TOPOLOGY -->
-  <div id="your-element-selector" style="width: 100vw; height: 100vh;"></div>
-
-  <!-- Our app-index web component. This component is defined in src/pages/app-index.ts-->
-  <app-index></app-index>
-
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js');
-    }
-  </script>
-  <script src="p5.min.js"></script>
-  <script src="vanta.topology.min.js"></script>
-  <script>
-    VANTA.TOPOLOGY({
-      el: "#your-element-selector",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x56a29d,
-      backgroundColor: 0x2d2f36
-    });
-  </script>
 </body>
 
 </html>
