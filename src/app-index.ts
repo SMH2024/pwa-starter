@@ -1,6 +1,6 @@
-import { LitElement, css } from 'lit';
+// app-index.ts
+import { LitElement, css, html } from 'lit';
 import { customElement } from 'lit/decorators.js';
-
 import './pages/app-home';
 import './components/header';
 import './styles/global.css';
@@ -10,25 +10,24 @@ import { router } from './router';
 export class AppIndex extends LitElement {
   static styles = css`
     main {
-      padding-left: 16px;
-      padding-right: 16px;
-      padding-bottom: 16px;
+      padding: 16px;
+      background: var(--background);
+      color: var(--on-background);
     }
   `;
 
   firstUpdated() {
     router.addEventListener('route-changed', () => {
-      if ("startViewTransition" in document) {
+      if ('startViewTransition' in document) {
         (document as any).startViewTransition(() => this.requestUpdate());
-      }
-      else {
+      } else {
         this.requestUpdate();
       }
     });
   }
 
   render() {
-    // router config can be round in src/router.ts
-    return router.render();
+    // Ensure html is used to render the component's output
+    return html`${router.render()}`;
   }
 }
