@@ -2,7 +2,6 @@
 import { html } from 'lit';
 import { Router } from '@thepassle/app-tools/router.js';
 import { lazy } from '@thepassle/app-tools/router/plugins/lazy.js';
-
 import './pages/app-home.js';
 
 export const router = new Router({

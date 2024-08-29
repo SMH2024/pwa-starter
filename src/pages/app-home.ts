@@ -1,15 +1,10 @@
 // app-home.ts
 import { LitElement, css, html } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
-import { resolveRouterPath } from '../router';
-import '@shoelace-style/shoelace/dist/components/card/card.js';
-import '@shoelace-style/shoelace/dist/components/button/button.js';
+import { customElement } from 'lit/decorators.js';
 import { styles } from '../styles/shared-styles';
 
 @customElement('app-home')
 export class AppHome extends LitElement {
-  @property() message = 'Welcome!';
-
   static styles = [
     styles,
     css`
@@ -19,6 +14,8 @@ export class AppHome extends LitElement {
         align-items: center;
         flex-direction: column;
         padding: 16px;
+        background: var(--md-sys-color-background);
+        color: var(--md-sys-color-on-background);
       }
 
       sl-card {
@@ -48,23 +45,12 @@ export class AppHome extends LitElement {
         <div id="welcomeBar">
           <sl-card>
             <div slot="header">
-              <h2>${this.message}</h2>
+              <h2>Welcome to the Home Page</h2>
             </div>
             <p>
-              For more information on the PWABuilder pwa-starter, check out the
-              <a href="https://docs.pwabuilder.com/#/starter/quick-start">documentation</a>.
+              This is an example of a home page that adapts to the current theme!
             </p>
           </sl-card>
-          <sl-card>
-            <h2>Technology Used</h2>
-            <ul>
-              <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
-              <li><a href="https://lit.dev">Lit</a></li>
-              <li><a href="https://shoelace.style/">Shoelace</a></li>
-              <li><a href="https://github.com/thepassle/app-tools/blob/master/router/README.md">App Tools Router</a></li>
-            </ul>
-          </sl-card>
-          <sl-button href="${resolveRouterPath('about')}" variant="primary">Navigate to About</sl-button>
         </div>
       </main>
     `;
